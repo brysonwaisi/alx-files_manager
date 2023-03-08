@@ -1,9 +1,16 @@
-const express = require('express');
-const AppController = require('../controllers/AppController');
+import express from 'express';
+import AppController from '../controllers/AppController';
+// const UsersController = require('../controllers/UsersController');
 
-const router = express.Router();
+function routingControl(app) {
+  const router = express.Router();
+  app.use('/', router);
 
-router.get('/status', AppController.getStatus);
-router.get('/stats', AppController.getStats);
+  // App Controller
+  router.get('/status', AppController.getStatus);
+  router.get('/stats', AppController.getStats);
 
-module.exports = router;
+  // User Controller
+// router.post('/users', UsersController.postNew);
+}
+export default routingControl;
