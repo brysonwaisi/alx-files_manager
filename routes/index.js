@@ -1,6 +1,6 @@
 const express = require('express');
 const AppController = require('../controllers/AppController');
-// const UsersController = require('../controllers/UsersController');
+const UsersController = require('../controllers/UsersController');
 
 function routingControl(app) {
   const router = express.Router();
@@ -11,6 +11,6 @@ function routingControl(app) {
   router.get('/stats', AppController.getStats);
 
   // User Controller
-  // router.post('/users', UsersController.postNew);
+  router.post('/users', UsersController.postNew);
 }
 module.exports = routingControl;
