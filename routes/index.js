@@ -1,5 +1,5 @@
-import express from 'express';
-import AppController from '../controllers/AppController';
+const express = require('express');
+const AppController = require('../controllers/AppController');
 // const UsersController = require('../controllers/UsersController');
 
 function routingControl(app) {
@@ -11,6 +11,6 @@ function routingControl(app) {
   router.get('/stats', AppController.getStats);
 
   // User Controller
-// router.post('/users', UsersController.postNew);
+  // router.post('/users', UsersController.postNew);
 }
-export default routingControl;
+module.exports = routingControl;

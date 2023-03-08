@@ -1,4 +1,4 @@
-import mongodb from 'mongodb';
+const mongodb = require('mongodb');
 
 class DBClient {
   constructor() {
@@ -32,5 +32,5 @@ class DBClient {
   }
 }
 
-export const dbClient = new DBClient();
-export default dbClient;
+const dbClient = new DBClient();
+module.exports = dbClient;

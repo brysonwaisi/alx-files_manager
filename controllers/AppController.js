@@ -1,6 +1,5 @@
-/* eslint-disable import/no-named-as-default */
-import redisClient from '../utils/redis';
-import dbClient from '../utils/db';
+const redisClient = require('../utils/redis');
+const dbClient = require('../utils/db');
 
 class AppController {
   static getStatus(req, res) {
@@ -8,7 +7,7 @@ class AppController {
       redis: redisClient.isAlive(),
       db: dbClient.isAlive(),
     };
-    res.status(200).semd(status);
+    res.status(200).send(status);
   }
 
   static async getStats(req, res) {
@@ -20,4 +19,4 @@ class AppController {
   }
 }
 
-export default AppController;
+module.exports = AppController;
